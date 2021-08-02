@@ -1,9 +1,9 @@
 {% extends 'vikoba/base.html' %}
 {% load static %}
 {% block content %}
-<div class="container py-2">
+<div class="container py-2 pt-1">
     <div class="p-5 mb-4 bg-light border rounded-3">
-        <div class="container-fluid py-5">
+        <div class="container-fluid py-5 pt-1">
           <h1 class="display-5 fw-bold">Accounting</h1>
           <p class="col-md-8 fs-4">know your balance and examine the ongoing trending of the finance . accurately divide the shares according to the contribution done by each</p>
           <div class="btn-toolbar mb-2 mb-md-0">
@@ -24,18 +24,11 @@
     <div class="row align-items-md-stretch">
         <div class="col-md-4">
             <div class="h-100 p-5 bg-light border rounded-3">
-              <h2>DEPOSIT INFO</h2>
-              <form>
-                <div class="form-group">
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="name">
-                </div>
-                <br>
-                <div class="form-group">
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="amount">
-                </div>
-                <br>
-                <button type="submit" class="btn btn-primary">deposit</button>
-              </form>
+              <h2>DEPOSIT</h2>
+              <p class=" fs-4">
+                To make a deposite login into your profile now
+              </p>
+              <button type="submit" class="btn btn-outline-secondary"><a href="{% url 'login' %}">LOGIN TO DEPOSIT</a></button>
             </div>
         </div>
         <div class="col-md-8">

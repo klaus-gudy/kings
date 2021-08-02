@@ -25,3 +25,18 @@ def display(request):
 
     context = {'form' : form}
     return render(request, 'vikoba/display.html', context)
+
+def login(request):
+
+    context = {}
+    return render(request, 'vikoba/login.html', context)
+
+def welcome(request):
+
+    context = {}
+    return render(request, 'vikoba/welcome.html', context)  
+
+def logout(request):
+
+    context = {}
+    return render(request, 'vikoba/logout.html', context)  
