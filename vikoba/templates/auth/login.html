@@ -1,0 +1,60 @@
+{% extends 'auth/main.html' %}
+{% load static %}
+{% block content %}
+<div class=" container log">
+  <div class="sign">
+    <form class="form-signin" action="" method="post">
+      <h2 style="font-size:50px;">SIGN IN</h2>
+      <table class="" style="margin-left: auto; margin-right: auto; margin-top:20px; width:400px; height: 200px;">
+        <tr>
+          <td><label for="floatingInput">Email address</label></td>
+          <td><input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"></td>
+        </tr>
+        <tr>
+          <td><label for="floatingPassword">Password</label></td>
+          <td><input type="password" class="form-control" id="floatingPassword" placeholder="Password"></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align: center;">
+            <div class="checkbox mb-3">
+            <label>
+              <p class="login-card-footer-text">forget password?  <a href="#" class="text-reset">reset</a></p>
+            </label>
+          </div>
+        </td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align: center;">
+            <button class="w-40 btn btn-lg btn-primary" type="submit">Sign in</button>
+          </td>
+        </tr>
+      </table>
+
+    </form>
+  </div>
+
+  <!-- <main class="form-signin">
+    <form style="margin-left: auto; margin-right: auto; margin-top:20px; width:400px; height: 200px;">
+      <img class="mb-4" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+  
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+  
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    </form>
+  </main> -->
+</div>
+
+{% endblock content %}

@@ -1,0 +1,53 @@
+{% extends 'auth/main.html' %}
+{% load static %}
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button>register</button>
+</form>
+
+<!-- <div class=" container log">
+  <div class="sign">
+    <form class="form-signin" action="" method="post">
+        {% csrf_token %}
+      <h2 style="font-size:50px;">REGISTER</h2>
+      <table class="" style="margin-left: auto; margin-right: auto; margin-top:20px; width:400px; height: 200px;">
+        <tr>
+          <td><label for="floatingInput">Email address</label></td>
+          <td><input type="email" class="form-control" name="email" placeholder="name@example.com"></td>
+        </tr>
+        <tr>
+            <td><label for="floatingInput">Username</label></td>
+            <td><input type="text" class="form-control" name="username" placeholder="username"></td>
+        </tr>
+        <tr>
+          <td><label for="floatingPassword">Password</label></td>
+          <td><input type="password" class="form-control" name="password" placeholder="Password"></td>
+        </tr>
+        <tr>
+            <td><label for="floatingPassword">confirm password</label></td>
+            <td><input type="password" class="form-control" name="password2" placeholder="confirm password"></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align: center;">
+            <div class="checkbox mb-3">
+            <label>
+              <a href="{% url 'login' %}">already have an account</a>
+            </label>
+          </div>
+        </td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align: center;">
+            <button class="w-40 btn btn-lg btn-primary" type="submit">register</button>
+          </td>
+        </tr>
+      </table>
+
+    </form>
+  </div>
+</div> -->
+
+{% endblock content %}
