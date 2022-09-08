@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'vikoba',
+    'api',
     'rest_framework',
 ]
 
