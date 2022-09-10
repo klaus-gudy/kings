@@ -2,9 +2,6 @@ from django.shortcuts import render,redirect
 from .models import *
 from .forms import DepositForm
 
-# def base(request):
-#     context = {}
-#     return render(request, 'vikoba/base.html', context)
 
 def deposit(request):
     deposits = Deposit.objects.order_by('-date')
@@ -25,18 +22,3 @@ def display(request):
 
     context = {'form' : form}
     return render(request, 'vikoba/display.html', context)
-
-def login(request):
-
-    context = {}
-    return render(request, 'vikoba/login.html', context)
-
-def welcome(request):
-
-    context = {}
-    return render(request, 'vikoba/welcome.html', context)  
-
-def logout(request):
-
-    context = {}
-    return render(request, 'vikoba/logout.html', context)  

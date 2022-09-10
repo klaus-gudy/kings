@@ -1,63 +1,13 @@
 {% extends 'vikoba/base.html' %}
 {% load static %}
 {% block content %}
-<div class="container py-2 pt-1">
-    <div class="p-5 mb-4 bg-light border rounded-3">
-        <div class="container-fluid py-5 pt-1">
-          <h1 class="display-5 fw-bold">Accounting</h1>
-          <p class="col-md-8 fs-4">know your balance and examine the ongoing trending of the finance . accurately divide the shares according to the contribution done by each</p>
-          <div class="btn-toolbar mb-2 mb-md-0">
-            <div class="btn-group me-2">
-              <button type="button" class="btn btn-sm btn-outline-secondary">total amount</button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">45,000</button>
-            </div>
-            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-              This week
-            </button>
-          </div>
-          <!-- <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="809" height="341" style="display: block; width: 809px; height: 341px;"></canvas> -->
-        </div>
-    </div>
-</div>
-<div class="container py-2">
-    <div class="row align-items-md-stretch">
-        <div class="col-md-4">
-            <div class="h-100 p-5 bg-light border rounded-3">
-              <h2>DEPOSIT</h2>
-              <p class=" fs-4">
-                To make a deposite login into your profile now
-              </p>
-              <button type="submit" class="btn btn-outline-secondary"><a href="{% url 'login' %}">LOGIN TO DEPOSIT</a></button>
-            </div>
-        </div>
-        <div class="col-md-8">
-          <div class="h-100 p-5 bg-light border rounded-3">
-            <h2>LATEST DEPOSIT</h2>
-            <div class="row">
-                <div class = "table-responsive">
-                    <table class = "table">
-                        <thead>
-                            <tr>
-                               <th>name</th>
-                               <th>date</th>
-                               <th>amount</th>
-                            </tr>
-                         </thead>
-                         <tbody>
-                            {% for deposit in deposits %}
-                            <tr class = "success">
-                                <td>{{deposit.name}}</td>
-                                <td>{{deposit.date}}</td>
-                                <td>{{deposit.amount}}</td>
-                             </tr>
-                            {% endfor %}
-                         </tbody>
-                    </table>
-                </div>
-          </div>
-        </div>
-      </div>
-  </div> 
+
+{% if user.is_authenticated %}
+  <p>Welcome {{ user.username }} !!!</p>    
+  <a href="{% url 'logout' %}">log out</a>
+{% else %} 
+  <p>you are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
 
 {% endblock content %}
