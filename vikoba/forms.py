@@ -9,10 +9,10 @@ class DepositForm(ModelForm):
         #     'amount': form.amount(attrs={'class': 'form-control','placeholder':'amount deposit'}),
         # }
         # fields = '__all__'
-        fields = ('name','amount',)
+        fields = ('depositer','amount',)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['name'].widget.attrs.update({'class':'form-control', 'placeholder':'enter your name'})
+        self.fields['depositer'].widget.attrs.update({'class':'form-control', 'placeholder':'enter your name'})
         self.fields['amount'].widget.attrs.update({'class':'form-control', 'placeholder':'amount deposit'})     
 
