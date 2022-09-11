@@ -2,6 +2,11 @@ from django.shortcuts import render,redirect
 from .models import *
 from .forms import DepositForm
 
+from django.views.generic import ListView, TemplateView
+
+class DisplayView(TemplateView):
+    template_name = "vikoba/welcome.html"
+
 
 def deposit(request):
     deposits = Deposit.objects.order_by('-date')

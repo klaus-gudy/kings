@@ -1,30 +1,8 @@
-{% extends 'vikoba/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="container py-2">
-    <div class="row align-items-md-stretch">
-        <div class="col-md-4">
-            <div class="h-100 p-5 bg-light border rounded-3">
-              <h2>DEPOSIT INFO</h2>
-              <form method="POST" action="">
-                  {% csrf_token %}
-                  
-                <div class="form-group">
-                  <!-- <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="name"> -->
-                  {{form.name}}
-                </div>
-                <br>
-                <div class="form-group">
-                  <!-- <input type="text" class="form-control"  placeholder="amount"> -->
-                  {{form.amount}}
-                </div>
-                <br>
-                <button type="submit" class="btn btn-primary">deposit</button>
-                <!-- <input type="submit" > -->
-              </form>
-            </div>
-        </div>
-    </div>
-</div>
+
+
+<h3>display some info</h3>
 
 {% endblock content %}
