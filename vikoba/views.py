@@ -6,15 +6,17 @@ from django.views.generic import ListView, TemplateView, CreateView
 
 from django.urls import reverse_lazy
 
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 class DisplayView(TemplateView):
     template_name = "vikoba/welcome.html"
 
-class DisplayDeposit(ListView):
+class DisplayDeposit(LoginRequiredMixin, ListView):
     model = Deposit
     template_name = "vikoba/display.html"
     context_object_name = 'deposit'
 
-class DepositView(CreateView):
+class DepositView(LoginRequiredMixin, CreateView):
     form_class = DepositForm
     template_name = "vikoba/deposit.html"
     success_url =reverse_lazy('display')
@@ -23,7 +25,7 @@ class DepositView(CreateView):
         form.instance.name = self.request.user
         return super(DepositView, self).form_valid(form)
 
-class IndividualDeposit(ListView):
+class IndividualDeposit(LoginRequiredMixin, ListView):
     model = Deposit
     template_name = "vikoba/mydeposit.html"
     context_object_name = 'deposit'
